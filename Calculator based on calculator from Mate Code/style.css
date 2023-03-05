@@ -1,0 +1,177 @@
+*{
+    padding: 0%;
+    margin: 0%;  
+    list-style: none;
+    
+}
+
+:root {
+    --mainBg:linear-gradient( 
+        30deg, 
+        rgb(52, 33, 199),
+        rgba(75, 131, 195, 0.9),
+        
+        rgba(142, 63, 167, 0.9)
+    ); 
+    --display:linear-gradient( 
+        -10deg, 
+        rgb(52, 33, 199),
+        rgba(162, 182, 207, 0.9)
+        
+     
+    );  
+    --white:#fff; 
+    --button:rgb(27, 16, 48); 
+    --buttonHover:linear-gradient( 
+        10deg, 
+        rgb(52, 33, 199),
+       
+        
+        rgba(29, 25, 30, 0.9)
+    ); 
+    --height:65vh; 
+    --padding:40px; 
+    --history:linear-gradient( 
+        10deg, 
+        rgb(82, 33, 146),rgba(77, 16, 156,)
+    );   
+    --buttonBg:linear-gradient( 
+        50deg, 
+        rgb(52, 33, 199),
+        rgba(75, 131, 195, 0.9), 
+        rgb(122, 55, 159)
+    );  
+ 
+    --buttonBgHover:linear-gradient( 
+        -10deg, 
+        rgb(41, 16, 228),
+        rgba(44, 109, 183, 0.9), 
+        rgb(104, 34, 141)
+    );   
+    --border:rgb(255, 255, 255);
+}
+body { 
+    overflow: hidden;
+    background: var(--mainBg); 
+    width: 100vw;
+    height: 100vh; 
+    font-family: Arial, Helvetica, sans-serif; 
+    
+} 
+.container {
+    display: flex; 
+    justify-content: center;
+    align-items: flex-start; 
+  
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+}
+.calculator {
+    width: 500px;
+    height: var(--height); 
+  
+  
+} 
+.display {
+    width: 100%;
+    background: var(--display);
+    height: 150px; 
+    box-shadow: 0px 0px 20px 2px rgb(81, 49, 120); 
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: var(--padding); 
+    color: var(--white);   
+    text-align: right; 
+    
+    
+    
+}  
+.previousNumber p{
+    font-size: 30px;
+}  
+.mathSign {
+    font-size: 30px;
+} 
+.currentNumber  {
+    font-size: 40px;
+} 
+.panel {
+    
+    width: calc(100% + var(--padding)); 
+    height: 100%; 
+    display: grid; 
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(5,1fr); 
+} 
+.panel button {
+    margin: 3px; 
+    font-size: 33px;  
+    border-radius: 10%;
+    background: var(--button); 
+    color: var(--white); 
+    cursor: pointer; 
+    transition: all .2s;
+} 
+.panel button:hover { 
+    border: 4px solid var(--border);
+    background: var(--buttonHover);
+}
+.equals {
+    grid-row: span 2;
+} 
+.calculator-history { 
+    box-sizing: border-box;
+    background:var(--history); 
+    height: calc(var(--height) + 150px);
+    box-shadow: 0px 0px 20px 2px rgb(26, 4, 78);
+    width: 220px; 
+    margin-left: calc(var(--padding) + 20px); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+   
+    color: white; 
+    padding: 5px;
+} 
+.history-title { 
+    display: flex; 
+    flex-direction: column;
+    gap: 15px;
+    font-size: 25px; 
+    
+} 
+.history-btn { 
+    display: none;
+    font-size: 20px;
+    border-radius: 18px;
+    border: none;
+    padding: 6px 12px; 
+    width: 88%;
+    margin: 0 auto; 
+    cursor: pointer; 
+    background: var(--buttonBg); 
+    transition: all .2s; 
+    color: var(--white);
+}   
+.history li {
+    font-size: 20px;
+    margin: 10px 0;
+}
+.history-btn.active {
+    display: block;
+}
+.history-btn:hover {
+    background: var(--buttonBgHover);
+}
+.calculator-history hr {
+    width: 100%;
+    margin: 10px; 
+    background: var(--white);
+    border-radius: 12px; 
+}
+
